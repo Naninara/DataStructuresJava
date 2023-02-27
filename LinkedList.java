@@ -150,6 +150,16 @@ public class LinkedList {
             temp1 = temp1.next;
         }
     }
+    public void detectLoop(){
+        Node fast = head;
+        Node slow = head;
+        while(fast!=null && fast.next!=null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast==slow) System.out.println("Cycle is detected");
+        }
+        System.out.println("no cycle deteceted");
+    }
 
 
 }
